@@ -42,7 +42,7 @@ def delete_city_obj(city_id):
 
 @app_views.route('/states/<state_id>/cities', methods=['POST'], strict_slashes=False)
 def create_new_city(state_id):
-    """creates a State"""
+    """creates a City"""
 
     response = storage.get(State, state_id)
 

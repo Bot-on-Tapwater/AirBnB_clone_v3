@@ -51,4 +51,5 @@ def not_found_error(error):
     # response = json.dumps(data, indent=2)
     # response += '\n'
     # return response
-    return jsonify(data)
+    # print("error from index.py")
+    return jsonify(data), 404

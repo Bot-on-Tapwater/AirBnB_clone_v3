@@ -21,6 +21,7 @@ def serve_state_id(state_id):
     response = storage.get(State, state_id)
 
     if response is None:
+        # print("absent")
         abort(404)
 
     return jsonify(response.to_dict())
