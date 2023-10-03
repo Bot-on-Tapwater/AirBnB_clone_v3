@@ -32,8 +32,7 @@ def server_city_id(city_id):
     return jsonify(response.to_dict())
 
 
-@app_views.route('/cities/<city_id>',
-                 methods=['DELETE'], strict_slashes=False)
+@app_views.route('/cities/<city_id>', methods=['DELETE'], strict_slashes=False)
 def delete_city_obj(city_id):
     """deletes a State object"""
     city_to_delete = storage.get(City, city_id)
