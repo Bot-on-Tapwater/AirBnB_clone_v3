@@ -123,7 +123,6 @@ def places_search():
     if json_entered is None:  # not a json
         abort(400, description="Not a JSON")
 
-
     # **************************************
     # REPEATED CODE BELOW TO BE PUT IN A FUNCTION
     # **************************************
