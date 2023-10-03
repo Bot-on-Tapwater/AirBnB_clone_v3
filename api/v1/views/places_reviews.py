@@ -40,6 +40,7 @@ def delete_review_obj(review_id):
     storage.save()
     return jsonify({}), 200
 
+
 @app_views.route('/reviews/<review_id>', strict_slashes=False)
 def serve_review_id(review_id):
     """Retrives a Review object"""
@@ -67,7 +68,7 @@ def create_new_review(place_id):
             # NOT WORKING NEEDS REPAIR !!!!!
             abort(400, description="Not a JSON")
     else:
-        abort(400,"Not a JSON")
+        abort(400, "Not a JSON")
         # abort(400, description="Content-Type is not application/json")
 
     # if name not in dict
@@ -107,7 +108,8 @@ def update_review_obj(review_id):
         # abort(400, description="Content-Type is not application/json")
 
     for key, value in data_entered.items():
-        if key not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
+        if key not in ['id', 'user_id', 'place_id',
+                       'created_at', 'updated_at']:
             setattr(review_to_update, key, value)
 
     storage.save()
