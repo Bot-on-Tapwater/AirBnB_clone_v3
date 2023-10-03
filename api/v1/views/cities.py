@@ -8,7 +8,8 @@ import json
 from flask import request, jsonify, abort
 
 
-@app_views.route('/states/<state_id>/cities', methods=['GET'], strict_slashes=False)
+@app_views.route('/states/<state_id>/cities',
+                 methods=['GET'], strict_slashes=False)
 def get_cities(state_id):
     """Retrieves a list of all State objects"""
     cities = storage.all(City)
